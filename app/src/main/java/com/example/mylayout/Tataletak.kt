@@ -181,7 +181,21 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
                 .height(300.dp),
             contentAlignment = Alignment.Center
         ) {
-            // Konten Box 2 akan ditambahkan
+            Box(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .height(300.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(
+                        painter = painterResource(id = R.drawable.notosibnolok),
+                        contentDescription = null,
+                        contentScale = ContentScale.Fit,
+                        modifier = modifier.size(200.dp)
+                    )
+                }
+            }
         }
     }
 }
