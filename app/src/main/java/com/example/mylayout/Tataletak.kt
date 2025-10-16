@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -98,55 +99,14 @@ fun TataletakRowColumn(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TataletakColumnRow(modifier: Modifier = Modifier) {
-    Column() {
-        //Baris1
-        Row(modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly) {
-            Text(text = "Komponen1Baris1")
-            Text(text = "Komponen2Baris1")
-            Text(text = "Komponen3Baris1")
-        }
-        //Baris2
-        Row(modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly) {
-            Text(text = "Komponen1Baris2")
-            Text(text = "Komponen2Baris2")
-            Text(text = "Komponen3Baris2")
-        }
-    }
-}
-
-// ... (kode sebelumnya)
-
-@Composable
-fun TataletakRowColumn(modifier: Modifier = Modifier) {
-    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-        //Kolom1
-        Column() {
-            Text(text = "Komponen1Kolom1")
-            Text(text = "Komponen2Kolom1")
-            Text(text = "Komponen3Kolom1")
-        }
-        //Kolom2
-        Column() {
-            Text(text = "Komponen1Kolom2")
-            Text(text = "Komponen2Kolom2")
-            Text(text = "Komponen3Kolom2")
-        }
-    }
-}
-
-
-// ... (kode sebelumnya)
-
-@Composable
 fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
+    val gambar = painterResource(id = R.drawable.notosibnolok)
     Column {
         Box(
             modifier = modifier
                 .fillMaxWidth()
-                .height(110.dp),
+                .height(110.dp)
+                .background(color = Color.Yellow),
             contentAlignment = Alignment.Center
         )
         {
@@ -178,31 +138,25 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
         Box(
             modifier = modifier
                 .fillMaxWidth()
-                .height(300.dp),
+                .height(300.dp)
+                .background(Color.Cyan),
             contentAlignment = Alignment.Center
         ) {
-            Box(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .height(300.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(
-                        painter = painterResource(id = R.drawable.notosibnolok),
-                        contentDescription = null,
-                        contentScale = ContentScale.Fit,
-                        modifier = modifier.size(200.dp)
-                    )
-                    Text(
-                        text = "My Music",
-                        fontSize = 30.sp,
-                        color = Color.Magenta,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Cursive,
-                        modifier = modifier.padding(top = 8.dp)
-                    )
-                }
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Image(
+                    painter = gambar,
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(200.dp) // Perbaikan di sini
+                )
+                Text(
+                    text = "My Music",
+                    fontSize = 30.sp,
+                    color = Color.Red,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Cursive,
+                    modifier = modifier.padding(top = 8.dp)
+                )
             }
         }
     }
