@@ -148,8 +148,29 @@ fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .height(110.dp),
             contentAlignment = Alignment.Center
-        ) {
-            // Konten Box 1 akan ditambahkan
+        )
+        {
+            Column() {
+                // Baris 1
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Coll_Row1_Komponen1")
+                    Text(text = "Coll_Row1_Komponen2")
+                    Text(text = "Coll_Row1_Komponen3")
+                }
+
+                // Baris 2
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(text = "Coll_Row2_Komponen1")
+                    Text(text = "Coll_Row2_Komponen2")
+                    Text(text = "Coll_Row2_Komponen3")
+                }
+            }
         }
 
         Spacer(modifier = modifier.height(height = 10.dp))
