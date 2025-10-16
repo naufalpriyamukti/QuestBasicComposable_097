@@ -136,3 +136,31 @@ fun TataletakRowColumn(modifier: Modifier = Modifier) {
         }
     }
 }
+
+
+// ... (kode sebelumnya)
+
+@Composable
+fun TataletakBoxColumnRow(modifier: Modifier = Modifier) {
+    Column {
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(110.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            // Konten Box 1 akan ditambahkan
+        }
+
+        Spacer(modifier = modifier.height(height = 10.dp))
+
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(300.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            // Konten Box 2 akan ditambahkan
+        }
+    }
+}
